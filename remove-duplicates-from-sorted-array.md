@@ -3,8 +3,8 @@
 - Topic: Array
 - Pattern: two-pointers
 - Submitted from: Leetcore
-- Submitted at: 2026-06-26T19:26:50.102Z
+- Submitted at: 2026-06-27T04:28:58.663Z
 
 ## Solution
 
-drg
+demo push
