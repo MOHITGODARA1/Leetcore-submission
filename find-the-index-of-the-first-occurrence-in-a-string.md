@@ -3,42 +3,38 @@
 - Topic: String
 - Pattern: substring-search
 - Submitted from: Leetcore
-- Submitted at: 2026-07-07T18:03:31.407Z
+- Submitted at: 2026-07-08T09:20:26.424Z
 
 ## Solution
 
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 int main() {
-    string hay, needle;
-    cin >> hay >> needle;
+    string haystack, needle;
 
-    if (needle.empty()) {
-        cout << 0;
-        return 0;
-    }
+    cin >> haystack;
+    cin >> needle;
 
-    for (int i = 0; i < hay.size(); i++) {
-        if (hay[i] == needle[0]) {
-            int left = i;
-            int j = 0;
+    int n = haystack.length();
+    int m = needle.length();
 
-            while (left < hay.size() &&
-                   j < needle.size() &&
-                   hay[left] == needle[j]) {
-                left++;
-                j++;
-            }
+    for (int i = 0; i <= n - m; i++) {
+        int j = 0;
 
-            if (j == needle.size()) {
-                cout << i;
-                return 0;   // Stop after finding the first occurrence
-            }
+        while (j < m && haystack[i + j] == needle[j]) {
+            j++;
+        }
+
+        if (j == m) {
+            cout << i;
+            return 0;
         }
     }
 
     cout << -1;
+
     return 0;
 }
